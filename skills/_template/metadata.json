@@ -1,0 +1,14 @@
+{
+  "$comment": "Bu dosya şablondur; skills/_template kataloglanmaz ve published yapılmaz.",
+  "id": "<skill-id>",
+  "title": "<Görünen Ad>",
+  "summary": "<Tek cümle, en fazla 240 karakter.>",
+  "category": "<coding|research|writing|automation>",
+  "origin": "ours",
+  "status": "draft",
+  "license": null,
+  "licenseFile": null,
+  "source": null,
+  "platforms": {},
+  "notes": null
+}

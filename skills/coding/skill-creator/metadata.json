@@ -1,0 +1,27 @@
+{
+  "id": "skill-creator",
+  "title": "skill-creator",
+  "summary": "Yeni skill yazma, mevcut skill'i iyilestirme ve skill performansini eval ve benchmark ile olcme is akisi; agents/, references/ ve scripts/ yardimcilerini icerir.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/skill-creator",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md, Claude Code skill biciminde sunulur; agent tanimlari, eval semalari, raporlama ve paketleme betikleri ve bir HTML degerlendirme gorunumu (eval-viewer) icerir.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/skill-creator",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak icerigi ve LICENSE.txt birebir kopyalandi; Apache-2.0 metni ayrica LICENSE olarak ayni baytlarla kopyalandi. Bagimlilik: Python 3 ve eval betikleri icin ek paketler; scripts/quick_validate.py bagimsiz dogrulama icin kullanilabilir."
+}

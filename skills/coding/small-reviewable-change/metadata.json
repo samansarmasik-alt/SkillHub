@@ -1,0 +1,13 @@
+{
+  "id": "small-reviewable-change",
+  "title": "small-reviewable-change",
+  "summary": "Kucuk ve incelenebilir kod degisikligi uretir; minimum dosya kumesi, kok neden, derinlestirilmeyen diff ve calistirilmis dogrulama ciktisi zorunludur.",
+  "category": "coding",
+  "origin": "ours",
+  "status": "draft",
+  "license": null,
+  "licenseFile": null,
+  "source": null,
+  "platforms": {},
+  "notes": "Ozgun icerik; lisans henuz secilmedi ve platform uyumlulugu henuz denenmedi. Kanit ve lisans belirlendiginde published yapilacak."
+}

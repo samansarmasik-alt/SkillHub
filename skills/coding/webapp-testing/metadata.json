@@ -1,0 +1,27 @@
+{
+  "id": "webapp-testing",
+  "title": "webapp-testing",
+  "summary": "Playwright ile yerel web uygulamalarını çalıştırıp tarayıcı üzerinden doğrulama, hata ayıklama, ekran görüntüsü ve konsol günlüğü toplama.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/webapp-testing",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md, Claude Code'un skill dizininde tanıdigi bicimde (YAML frontmatter + govde) ve Playwright tabanli yardimci betiklerle birlikte gelir.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/webapp-testing",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak icerigi ve LICENSE.txt birebir kopyalandi; Apache-2.0 metni ayrica LICENSE olarak ayni baytlarla kopyalandi. Harici bagimlilik: Python 3 ve Playwright (browser indirmesi gerekir), scripts/with_server.py yerel sunucuyu baslatip testleri calistirir."
+}

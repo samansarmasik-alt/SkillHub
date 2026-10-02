@@ -1,0 +1,27 @@
+{
+  "id": "mcp-builder",
+  "title": "mcp-builder",
+  "summary": "LLM'lerin dis servislerle arac uzerinden konusmasini saglayan MCP sunucularini FastMCP veya Node/TypeScript SDK ile tasarlama, derleme ve degerlendirme rehberi.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/mcp-builder",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md, Claude Code skill biciminde sunulur; reference/ altinda Node ve Python MCP sunucu ornekleri, scripts/ altinda degerlendirme betikleri bulunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/mcp-builder",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak icerigi ve LICENSE.txt birebir kopyalandi; Apache-2.0 metni ayrica LICENSE olarak ayni baytlarla kopyalandi. Bagimlilik: Python 3 (scripts/requirements.txt) ve Node.js; ornek sunucular harici API anahtarlari gerektirebilir."
+}
