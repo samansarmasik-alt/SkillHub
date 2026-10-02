@@ -1,0 +1,35 @@
+{
+  "id": "nodejs-backend-patterns",
+  "title": "nodejs-backend-patterns",
+  "summary": "Build production-ready Node.js backend services with Express/Fastify, implementing middleware patterns, error handling, authentication, database integration, and API design best practices. Use when creating Node.js servers, REST APIs,.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/wshobson/agents",
+    "path": "plugins/javascript-typescript/skills/nodejs-backend-patterns",
+    "version": "156b7a5e7a8b93642628a339ee4039c925b34c7f",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/javascript-typescript",
+        "verifiedAt": "2026-10-02"
+      }
+    },
+    "codex": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/javascript-typescript",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "javascript-testing-patterns",
+  "title": "javascript-testing-patterns",
+  "summary": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/wshobson/agents",
+    "path": "plugins/javascript-typescript/skills/javascript-testing-patterns",
+    "version": "156b7a5e7a8b93642628a339ee4039c925b34c7f",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/javascript-typescript",
+        "verifiedAt": "2026-10-02"
+      }
+    },
+    "codex": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/javascript-typescript",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

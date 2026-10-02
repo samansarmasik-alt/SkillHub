@@ -1,0 +1,27 @@
+{
+  "id": "anti-ui-slop",
+  "title": "anti-ui-slop",
+  "summary": "'Stop coding agents from shipping generic UI. Use UIZZE''s 800,000+ real web and iOS screens to build product-specific interfaces, define a design contract, cover required states, and run a hard finish gate. Use when designing,.",
+  "category": "design",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/github/awesome-copilot",
+    "path": "skills/anti-ui-slop",
+    "version": "143a3d976b3c1603cc8932984d5e1f28501cb5fc",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md c deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/github/awesome-copilot/tree/143a3d976b3c1603cc8932984d5e1f28501cb5fc/skills/anti-ui-slop",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE dosyasindan ayni baytlardan LICENSE olarak kopyalandi."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "claude-api",
+  "title": "claude-api",
+  "summary": "|- Reference for the Claude API / Anthropic SDK model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER read BEFORE opening the target file; don't skip because it \"looks like a.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/claude-api",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md a deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/claude-api",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE.txt dosyasindan ayni baytlardan LICENSE olarak kopyalandi."
+}

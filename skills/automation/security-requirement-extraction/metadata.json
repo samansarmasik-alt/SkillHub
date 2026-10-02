@@ -1,0 +1,35 @@
+{
+  "id": "security-requirement-extraction",
+  "title": "security-requirement-extraction",
+  "summary": "Derive security requirements from threat models and business context. Use when translating threats into actionable requirements, creating security user stories, or building security test cases",
+  "category": "automation",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/wshobson/agents",
+    "path": "plugins/security-scanning/skills/security-requirement-extraction",
+    "version": "156b7a5e7a8b93642628a339ee4039c925b34c7f",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/security-scanning",
+        "verifiedAt": "2026-10-02"
+      }
+    },
+    "codex": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/security-scanning",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

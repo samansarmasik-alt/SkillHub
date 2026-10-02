@@ -1,0 +1,35 @@
+{
+  "id": "github-actions-templates",
+  "title": "github-actions-templates",
+  "summary": "Create production-ready GitHub Actions workflows for automated testing, building, and deploying applications. Use when setting up CI/CD with GitHub Actions, automating development workflows, or creating reusable workflow templates",
+  "category": "automation",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/wshobson/agents",
+    "path": "plugins/cicd-automation/skills/github-actions-templates",
+    "version": "156b7a5e7a8b93642628a339ee4039c925b34c7f",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/cicd-automation",
+        "verifiedAt": "2026-10-02"
+      }
+    },
+    "codex": {
+      "usage": "SKILL.md w deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/tree/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/cicd-automation",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

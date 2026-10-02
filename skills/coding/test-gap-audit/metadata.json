@@ -1,0 +1,27 @@
+{
+  "id": "test-gap-audit",
+  "title": "test-gap-audit",
+  "summary": "Run a read-only audit for missing, weak, stale, or mis-scoped test coverage. If the user does not name a scope, audit the full repository and identify important code paths, routes, features, services, workflows, and contracts that lack.",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/github/awesome-copilot",
+    "path": "skills/test-gap-audit",
+    "version": "143a3d976b3c1603cc8932984d5e1f28501cb5fc",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md c deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/github/awesome-copilot/tree/143a3d976b3c1603cc8932984d5e1f28501cb5fc/skills/test-gap-audit",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

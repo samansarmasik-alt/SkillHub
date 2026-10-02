@@ -4,11 +4,14 @@ Kaliteli, doğrulanabilir skill'leri GitHub'da klasör ağacıyla saklayan ve za
 
 Bu depo bir web uygulaması değildir; bir skill koleksiyonudur. Her skill, `skills/<kategori>/<skill-id>/` altında kendi klasörüyle yaşar ve `SKILL.md` dosyasıyla belgelenir.
 
+Diller: [English](README.md) | [Türkçe](README.tr.md)
+
 ## Depo yapısı
 
 ```
 SkillHub/
 ├─ README.md
+├─ README.tr.md
 ├─ CONTRIBUTING.md
 ├─ skills/
 │  ├─ _template/            # yeni skill eklemek için kopyalanan şablon (kataloglanmaz)
@@ -47,7 +50,7 @@ Kanıt biçimi, alan adları ve kalite ölçütleri için [docs/source-policy.md
 
 ## Katalog
 
-Toplam **76 skill**, 5 kategoride. Aşağıdaki sayılar `metadata.json` dosyalarından üretilir, elle yazılmaz.
+Toplam **71 skill**, 5 kategoride. Aşağıdaki sayılar `metadata.json` dosyalarından üretilir, elle yazılmaz.
 
 ### design — 22 skill
 
@@ -57,7 +60,7 @@ Tasarim sistemleri, tipografi, renk ve spacing, etkilesim/motion, duyarli yerles
 |---|---|---|---|
 | [accessibility-compliance](skills/design/accessibility-compliance) | published | MIT | claude, codex |
 | [algorithmic-art](skills/design/algorithmic-art) | published | Apache-2.0 | claude |
-| [anti-ui-slop](skills/design/anti-ui-slop) | published | Apache-2.0 | claude |
+| [anti-ui-slop](skills/design/anti-ui-slop) | published | Apache-2.0 | copilot |
 | [brand-guidelines](skills/design/brand-guidelines) | published | Apache-2.0 | claude |
 | [canvas-design](skills/design/canvas-design) | published | Apache-2.0 | claude |
 | [design-system-patterns](skills/design/design-system-patterns) | published | MIT | claude, codex |
@@ -65,18 +68,18 @@ Tasarim sistemleri, tipografi, renk ve spacing, etkilesim/motion, duyarli yerles
 | [interaction-design](skills/design/interaction-design) | published | MIT | claude, codex |
 | [mobile-android-design](skills/design/mobile-android-design) | published | MIT | claude, codex |
 | [mobile-ios-design](skills/design/mobile-ios-design) | published | MIT | claude, codex |
-| [premium-frontend-ui](skills/design/premium-frontend-ui) | published | MIT | claude |
+| [premium-frontend-ui](skills/design/premium-frontend-ui) | published | MIT | copilot |
 | [react-native-design](skills/design/react-native-design) | published | MIT | claude, codex |
 | [responsive-design](skills/design/responsive-design) | published | MIT | claude, codex |
 | [screen-reader-testing](skills/design/screen-reader-testing) | published | MIT | claude, codex |
 | [slack-gif-creator](skills/design/slack-gif-creator) | published | Apache-2.0 | claude |
 | [theme-factory](skills/design/theme-factory) | published | Apache-2.0 | claude |
-| [ui-screenshots](skills/design/ui-screenshots) | published | MIT | claude |
+| [ui-screenshots](skills/design/ui-screenshots) | published | MIT | copilot |
 | [visual-design-foundations](skills/design/visual-design-foundations) | published | MIT | claude, codex |
 | [wcag-audit-patterns](skills/design/wcag-audit-patterns) | published | MIT | claude, codex |
 | [web-artifacts-builder](skills/design/web-artifacts-builder) | published | Apache-2.0 | claude |
 | [web-component-design](skills/design/web-component-design) | published | MIT | claude, codex |
-| [web-design-reviewer](skills/design/web-design-reviewer) | published | MIT | claude |
+| [web-design-reviewer](skills/design/web-design-reviewer) | published | MIT | copilot |
 
 ### coding — 35 skill
 
@@ -102,25 +105,25 @@ Backend ve API tasarimi, mimari kaliplar, JS/TS/Go/Python dil kisayollari, test 
 | [microservices-patterns](skills/coding/microservices-patterns) | published | MIT | claude, codex |
 | [modern-javascript-patterns](skills/coding/modern-javascript-patterns) | published | MIT | claude, codex |
 | [nodejs-backend-patterns](skills/coding/nodejs-backend-patterns) | published | MIT | claude, codex |
-| [playwright-generate-test](skills/coding/playwright-generate-test) | published | MIT | claude |
+| [playwright-generate-test](skills/coding/playwright-generate-test) | published | MIT | copilot |
 | [postgresql-table-design](skills/coding/postgresql-table-design) | published | MIT | claude, codex |
 | [prompt-engineering-patterns](skills/coding/prompt-engineering-patterns) | published | MIT | claude, codex |
 | [python-error-handling](skills/coding/python-error-handling) | published | MIT | claude, codex |
 | [python-type-safety](skills/coding/python-type-safety) | published | MIT | claude, codex |
 | [rag-implementation](skills/coding/rag-implementation) | published | MIT | claude, codex |
-| [react-audit-grep-patterns](skills/coding/react-audit-grep-patterns) | published | MIT | claude |
-| [react19-concurrent-patterns](skills/coding/react19-concurrent-patterns) | published | MIT | claude |
-| [react19-test-patterns](skills/coding/react19-test-patterns) | published | MIT | claude |
+| [react-audit-grep-patterns](skills/coding/react-audit-grep-patterns) | published | MIT | copilot |
+| [react19-concurrent-patterns](skills/coding/react19-concurrent-patterns) | published | MIT | copilot |
+| [react19-test-patterns](skills/coding/react19-test-patterns) | published | MIT | copilot |
 | [saga-orchestration](skills/coding/saga-orchestration) | published | MIT | claude, codex |
-| [security-review](skills/coding/security-review) | published | MIT | claude |
+| [security-review](skills/coding/security-review) | published | MIT | copilot |
 | [skill-creator](skills/coding/skill-creator) | published | Apache-2.0 | claude |
-| [small-reviewable-change](skills/coding/small-reviewable-change) | draft | — | yok |
-| [test-gap-audit](skills/coding/test-gap-audit) | published | MIT | claude |
+| [small-reviewable-change](skills/coding/small-reviewable-change) | draft | - | yok |
+| [test-gap-audit](skills/coding/test-gap-audit) | published | MIT | copilot |
 | [typescript-advanced-types](skills/coding/typescript-advanced-types) | published | MIT | claude, codex |
 | [webapp-testing](skills/coding/webapp-testing) | published | Apache-2.0 | claude |
 | [workflow-orchestration-patterns](skills/coding/workflow-orchestration-patterns) | published | MIT | claude, codex |
 
-### automation — 12 skill
+### automation — 8 skill
 
 Belge ve sunum uretimi, API semasi uretimi, changelog otomasyonu, tehdit modelleme, metrik/uyari yapilandirmasi ve savunmaci kabuk yazimi.
 
@@ -129,17 +132,13 @@ Belge ve sunum uretimi, API semasi uretimi, changelog otomasyonu, tehdit modelle
 | [attack-tree-construction](skills/automation/attack-tree-construction) | published | MIT | claude, codex |
 | [bash-defensive-patterns](skills/automation/bash-defensive-patterns) | published | MIT | claude, codex |
 | [changelog-automation](skills/automation/changelog-automation) | published | MIT | claude, codex |
-| [docx](skills/automation/docx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 | [github-actions-templates](skills/automation/github-actions-templates) | published | MIT | claude, codex |
 | [openapi-spec-generation](skills/automation/openapi-spec-generation) | published | MIT | claude, codex |
-| [pdf](skills/automation/pdf) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
-| [pptx](skills/automation/pptx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 | [prometheus-configuration](skills/automation/prometheus-configuration) | published | MIT | claude, codex |
 | [security-requirement-extraction](skills/automation/security-requirement-extraction) | published | MIT | claude, codex |
 | [stride-analysis-patterns](skills/automation/stride-analysis-patterns) | published | MIT | claude, codex |
-| [xlsx](skills/automation/xlsx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 
-### writing — 6 skill
+### writing — 5 skill
 
 Ortak dokuman yazim sureci, mimari karar kayitlari, olay runbook ve postmortem yazimi, karsi taraf iletisimi.
 
@@ -147,7 +146,6 @@ Ortak dokuman yazim sureci, mimari karar kayitlari, olay runbook ve postmortem y
 |---|---|---|---|
 | [architecture-decision-records](skills/writing/architecture-decision-records) | published | MIT | claude, codex |
 | [discernment-nudge](skills/writing/discernment-nudge) | published | Apache-2.0 | claude |
-| [doc-coauthoring](skills/writing/doc-coauthoring) | draft | — | claude |
 | [incident-runbook-templates](skills/writing/incident-runbook-templates) | published | MIT | claude, codex |
 | [internal-comms](skills/writing/internal-comms) | published | Apache-2.0 | claude |
 | [postmortem-writing](skills/writing/postmortem-writing) | published | MIT | claude, codex |
@@ -158,9 +156,8 @@ Kanita dayali arastirma ve varsayim denetimi.
 
 | Skill | Durum | Lisans | Platform kanıtı |
 |---|---|---|---|
-| [evidence-based-research](skills/research/evidence-based-research) | draft | — | yok |
-
-Kategori listesi `scripts/validate-skills.mjs` içindeki `CATEGORIES` sabitiyle sınırlıdır. Lisansı `—` olan skill'ler `draft` durumdadır ve serbest dağıtıma hazır sayılmaz.
+| [evidence-based-research](skills/research/evidence-based-research) | draft | - | yok |
+Kategori listesi `scripts/validate-skills.mjs` içindeki `CATEGORIES` sabitiyle sınırlıdır. Lisansı `-` olan skill'ler `draft` durumdadır ve serbest dağıtıma hazır sayılmaz.
 
 ## Katkı
 

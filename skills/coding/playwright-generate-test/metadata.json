@@ -1,0 +1,27 @@
+{
+  "id": "playwright-generate-test",
+  "title": "playwright-generate-test",
+  "summary": "'Generate a Playwright test based on a scenario using Playwright MCP'",
+  "category": "coding",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/github/awesome-copilot",
+    "path": "skills/playwright-generate-test",
+    "version": "143a3d976b3c1603cc8932984d5e1f28501cb5fc",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md c deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/github/awesome-copilot/tree/143a3d976b3c1603cc8932984d5e1f28501cb5fc/skills/playwright-generate-test",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). MIT metni kaynak deponun kok LICENSE dosyasindan ayni baytlardan kopyalandi."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "internal-comms",
+  "title": "internal-comms",
+  "summary": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports,.",
+  "category": "writing",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/internal-comms",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md a deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/internal-comms",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE.txt dosyasindan ayni baytlardan LICENSE olarak kopyalandi."
+}

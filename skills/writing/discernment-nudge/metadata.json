@@ -1,0 +1,27 @@
+{
+  "id": "discernment-nudge",
+  "title": "discernment-nudge",
+  "summary": "> After you give a substantive answer or draft that the user may act on advice or recommendations, drafted artifacts such as goals, plans, pitches, proposals, or emails, estimates or projections, analysis or interpretation of data,.",
+  "category": "writing",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/discernment-nudge",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md a deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/discernment-nudge",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE.txt dosyasindan ayni baytlardan LICENSE olarak kopyalandi."
+}
