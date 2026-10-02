@@ -1,33 +1,33 @@
-# Kalite Ölçütleri
+# Quality Criteria
 
-Her skill aşağıdaki dört başlıkta değerlendirilir. Puanlama rehberdir; `published` için ikinci başlık zorunludur.
+Every skill is evaluated under the four headings below. Scoring is a guide; the second heading is mandatory for `published`.
 
-## 1. Açıklık
+## 1. Clarity
 
-- `description` tek cümlede ne yaptığını söyler, niyeti değil sonucu anlatır.
-- Gövde, ilk 20 satırda hangi sorunu çözdüğünü açıklar.
+- `description` says in one sentence what it does; it describes the result, not the intent.
+- The body explains which problem it solves within the first 20 lines.
 
-## 2. Doğrulanabilirlik (zorunlu)
+## 2. Verifiability (mandatory)
 
-- En az bir platform için tarihli kanıt vardır.
-- Kanıt `documentation` veya `hands-on` temelini belirtir; `hands-on` ise nasıl denendiği yazılır.
-- `reference` değeri HTTPS adres, `verifiedAt` değeri `YYYY-MM-DD` tarihidir.
-- Kanıt tarihi ile güncel tarih arasında makul bir fark vardır; eski tarihli kanıt tazelenir.
+- There is dated evidence for at least one platform.
+- The evidence states the `documentation` or `hands-on` basis; for `hands-on` it describes how it was tested.
+- `reference` is an HTTPS address, `verifiedAt` is a `YYYY-MM-DD` date.
+- There is a reasonable gap between the evidence date and the current date; old evidence is refreshed.
 
-## 3. Kaynak ve lisans
+## 3. Source and license
 
-- Dış kaynaklı skill'lerde `source` eksiksizdir ve lisans metni klasörde bulunur.
-- Özgün içerik değiştirilmediyse belirtilir; değişiklik yapıldıysa `notes` alanında yazılır.
+- External-source skills have a complete `source` and the license text is present in the folder.
+- If the original content was not modified this is stated; if it was modified it is written in the `notes` field.
 
-## 4. Bakım kolaylığı
+## 4. Ease of maintenance
 
-- Klasör yapısı (`references/`, `scripts/`, `assets/`) gerektiğinde kullanılır, gereksiz doldurulmaz.
-- Kısa gövde, uzun detay `references/` altında tutulur.
-- Dış bağımlılık varsa kurulum gereksinimi açıkça yazılır.
+- The folder structure (`references/`, `scripts/`, `assets/`) is used when needed and not filled for the sake of it.
+- A short body keeps long details under `references/`.
+- External dependencies have their installation requirements written explicitly.
 
-## Reddedilme nedenleri
+## Rejection reasons
 
-- Kanıtsız platform uyumu iddiası.
-- Lisans veya kaynak bilgisinin tahmin edilmesi.
-- Özgün içeriğin sadeleştirilerek kopyalanması.
-- Doğrulanmamış örnek skill'in katalog içine alınması.
+- Claiming platform compatibility without evidence.
+- Guessing license or source information.
+- Copying original content in simplified form.
+- Including an unverified example skill in the catalog.

@@ -6,7 +6,7 @@
   "origin": "mirrored",
   "status": "published",
   "license": "Apache-2.0",
-  "licenseFile": "LICENSE",
+  "licenseFile": "LICENSE.txt",
   "source": {
     "repo": "https://github.com/anthropics/skills",
     "path": "skills/web-artifacts-builder",
@@ -23,5 +23,5 @@
       }
     }
   },
-  "notes": "Kaynak SKILL.md ve yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynaktaki LICENSE.txt ile ayni baytlardan LICENSE olarak kopyalandi."
+  "notes": "Kaynak SKILL.md ve yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynaktaki LICENSE.txt olarak birebir korunur; ek LICENSE kopyasi kaldirildi."
 }

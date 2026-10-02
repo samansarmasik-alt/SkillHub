@@ -1,7 +1,7 @@
 {
   "id": "small-reviewable-change",
   "title": "small-reviewable-change",
-  "summary": "Kucuk ve incelenebilir kod degisikligi uretir; minimum dosya kumesi, kok neden, derinlestirilmeyen diff ve calistirilmis dogrulama ciktisi zorunludur.",
+  "summary": "Produces small, reviewable code changes; a minimum file set, root-cause fixes, an undeepered diff and verification output from actually run commands are mandatory.",
   "category": "coding",
   "origin": "ours",
   "status": "draft",
@@ -9,5 +9,5 @@
   "licenseFile": null,
   "source": null,
   "platforms": {},
-  "notes": "Ozgun icerik; lisans henuz secilmedi ve platform uyumlulugu henuz denenmedi. Kanit ve lisans belirlendiginde published yapilacak."
+  "notes": "Original content, body translated to English. No license chosen yet and platform compatibility not yet tested; it becomes published once evidence and a license exist."
 }

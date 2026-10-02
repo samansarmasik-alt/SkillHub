@@ -1,63 +1,66 @@
-# SkillHub
+﻿# SkillHub
 
-Kaliteli, doğrulanabilir skill'leri GitHub'da klasör ağacıyla saklayan ve zaman zaman birlikte yazdığımız kendi skill'lerimizi barındıran depo.
+A repository that stores high-quality, verifiable skills as a folder tree on GitHub, together with the skills we write ourselves from time to time.
 
-Bu depo bir web uygulaması değildir; bir skill koleksiyonudur. Her skill, `skills/<kategori>/<skill-id>/` altında kendi klasörüyle yaşar ve `SKILL.md` dosyasıyla belgelenir.
+This repository is not a web application; it is a skill collection. Every skill lives in its own folder under `skills/<category>/<skill-id>/` and is documented by a `SKILL.md` file.
 
-## Depo yapısı
+Languages: [English](README.md) | [Türkçe](README.tr.md)
+
+## Repository layout
 
 ```
 SkillHub/
 ├─ README.md
+├─ README.tr.md
 ├─ CONTRIBUTING.md
 ├─ skills/
-│  ├─ _template/            # yeni skill eklemek için kopyalanan şablon (kataloglanmaz)
-│  └─ <kategori>/<skill-id>/
-│     ├─ SKILL.md           # tek kaynak: name/description frontmatter + gövde
-│     ├─ metadata.json      # kaynak, sürüm, lisans ve platform doğrulama bilgisi
-│     ├─ references/        # uzun dokümantasyon, örnekler
-│     ├─ scripts/           # çalıştırılabilir yardımcılar
-│     └─ assets/            # şablon ve çıktı dosyaları
+│  ├─ _template/            # copied template for new skills (not cataloged)
+│  └─ <category>/<skill-id>/
+│     ├─ SKILL.md           # single source of truth: name/description frontmatter + body
+│     ├─ metadata.json      # source, version, license and platform verification data
+│     ├─ references/        # long-form documentation, examples
+│     ├─ scripts/           # executable helpers
+│     └─ assets/            # template and output files
 └─ docs/
-   ├─ quality-rubric.md     # kabul ve kalite ölçütleri
-   └─ source-policy.md      # dış kaynak, lisans ve kanıt kuralları
+   ├─ quality-rubric.md     # acceptance and quality criteria
+   └─ source-policy.md      # external source, license and evidence rules
 ```
 
-## Kaynak sınıflandırması
+## Source classification
 
-- **Kendi skill'lerimiz:** doğrudan bu depoda yazıldı. Lisans seçimi yapılmadan `metadata.json` içinde `license` ve `licenseFile` alanları `null` bırakılır ve kök `LICENSE` dosyası eklenene kadar bu değerler korunur.
-- **Dış kaynaklı skill'ler:** özgün `SKILL.md` içeriği ve lisansı değiştirilmez. `metadata.json` içinde `source` alanı zorunludur: depo adresi, kaynak yol, sürüm/etiket ve alınmış tarih. Lisans adı ve lisans dosyasının konumu üst düzey `license` ve `licenseFile` alanlarında tutulur.
+- **Our own skills:** written directly in this repository. Until a license is chosen, the `license` and `licenseFile` fields in `metadata.json` are left `null`, and these values are kept that way until a root `LICENSE` file is added.
+- **Mirrored skills:** the original `SKILL.md` content and license are never modified. The `source` field in `metadata.json` is mandatory: repository address, source path, version/tag and retrieval date. The license name and license file location are kept in the top-level `license` and `licenseFile` fields.
 
-Dış kaynaklı skill'ler kopyalanırken yalnızca klasör yapısı korunur; hiçbir içerik yeniden yazılmaz veya sadeleştirilmez.
+When mirrored skills are copied, only the folder structure is preserved; no content is rewritten or simplified.
 
-## Yayın koşulu
+## Publication condition
 
-Bir skill yalnızca aşağıdaki koşulların tamamı sağlandığında `metadata.json` içinde `status: "published"` alır:
+A skill gets `status: "published"` in `metadata.json` only when all of the following hold:
 
-1. `SKILL.md` geçerli frontmatter (`name`, `description`) taşır.
-2. Gövde, skill'in ne yaptığını ve nasıl kullanıldığını açıklar.
-3. En az bir platform için tarihli doğrulama kanıtı vardır (`platforms.<platform>.evidence`).
-4. Dış kaynaklı ise `source` bloğu ve üst düzey lisans alanları eksiksizdir.
+1. `SKILL.md` carries valid frontmatter (`name`, `description`).
+2. The body explains what the skill does and how it is used.
+3. There is dated verification evidence for at least one platform (`platforms.<platform>.evidence`).
+4. For mirrored skills, the `source` block and the top-level license fields are complete.
 
-`status` değeri `draft` olsa bile `platforms` altına yazılan her platform kanıt taşımak zorundadır; kanıtsız bir platform alanı yazılırsa doğrulayıcı hata üretir. Doğrulanmamış platform uyumluluğu hiçbir şekilde listelenmez: alan boş bırakılır veya tümüyle yazılmaz. Kanıt bulunmayan hiçbir platform uyumu varsayılmaz ve örnek skill eklenmez.
+Even when `status` is `draft`, every platform written under `platforms` must carry evidence; the validator errors out if a platform is listed without evidence. Unverified platform compatibility is never listed: the field is left empty or omitted entirely. No platform compatibility without evidence is assumed and no example skill is added.
 
-Yayın için tek bir platformun geçerli kanıtla doğrulanması yeterlidir; diğer platformların kanıtı yoksa skill yine `published` olabilir.
+A single platform verified with valid evidence is enough for publication; a skill can still be `published` when other platforms have no evidence.
 
-Kanıt biçimi, alan adları ve kalite ölçütleri için [docs/source-policy.md](docs/source-policy.md) ve [docs/quality-rubric.md](docs/quality-rubric.md) dosyalarına bakın.
+See [docs/source-policy.md](docs/source-policy.md) and [docs/quality-rubric.md](docs/quality-rubric.md) for the evidence format, field names and quality criteria.
 
-## Katalog
+## Catalog
 
-Toplam **76 skill**, 5 kategoride. Aşağıdaki sayılar `metadata.json` dosyalarından üretilir, elle yazılmaz.
+Total: **71 skills** in 5 categories. The counts below are generated from the `metadata.json` files, not written by hand.
 
-### design — 22 skill
+### design — 22 skills
 
-Tasarim sistemleri, tipografi, renk ve spacing, etkilesim/motion, duyarli yerlesim, WCAG 2.2 erisilebilirlik, React 19 arayuz ve gorsel inceleme.
+Design systems, typography, color and spacing, interaction/motion, responsive layout, WCAG 2.2 accessibility, React 19 interfaces and visual review.
 
-| Skill | Durum | Lisans | Platform kanıtı |
+| Skill | Status | License | Platform evidence |
 |---|---|---|---|
 | [accessibility-compliance](skills/design/accessibility-compliance) | published | MIT | claude, codex |
 | [algorithmic-art](skills/design/algorithmic-art) | published | Apache-2.0 | claude |
-| [anti-ui-slop](skills/design/anti-ui-slop) | published | Apache-2.0 | claude |
+| [anti-ui-slop](skills/design/anti-ui-slop) | published | Apache-2.0 | copilot |
 | [brand-guidelines](skills/design/brand-guidelines) | published | Apache-2.0 | claude |
 | [canvas-design](skills/design/canvas-design) | published | Apache-2.0 | claude |
 | [design-system-patterns](skills/design/design-system-patterns) | published | MIT | claude, codex |
@@ -65,24 +68,24 @@ Tasarim sistemleri, tipografi, renk ve spacing, etkilesim/motion, duyarli yerles
 | [interaction-design](skills/design/interaction-design) | published | MIT | claude, codex |
 | [mobile-android-design](skills/design/mobile-android-design) | published | MIT | claude, codex |
 | [mobile-ios-design](skills/design/mobile-ios-design) | published | MIT | claude, codex |
-| [premium-frontend-ui](skills/design/premium-frontend-ui) | published | MIT | claude |
+| [premium-frontend-ui](skills/design/premium-frontend-ui) | published | MIT | copilot |
 | [react-native-design](skills/design/react-native-design) | published | MIT | claude, codex |
 | [responsive-design](skills/design/responsive-design) | published | MIT | claude, codex |
 | [screen-reader-testing](skills/design/screen-reader-testing) | published | MIT | claude, codex |
 | [slack-gif-creator](skills/design/slack-gif-creator) | published | Apache-2.0 | claude |
 | [theme-factory](skills/design/theme-factory) | published | Apache-2.0 | claude |
-| [ui-screenshots](skills/design/ui-screenshots) | published | MIT | claude |
+| [ui-screenshots](skills/design/ui-screenshots) | published | MIT | copilot |
 | [visual-design-foundations](skills/design/visual-design-foundations) | published | MIT | claude, codex |
 | [wcag-audit-patterns](skills/design/wcag-audit-patterns) | published | MIT | claude, codex |
 | [web-artifacts-builder](skills/design/web-artifacts-builder) | published | Apache-2.0 | claude |
 | [web-component-design](skills/design/web-component-design) | published | MIT | claude, codex |
-| [web-design-reviewer](skills/design/web-design-reviewer) | published | MIT | claude |
+| [web-design-reviewer](skills/design/web-design-reviewer) | published | MIT | copilot |
 
-### coding — 35 skill
+### coding — 35 skills
 
-Backend ve API tasarimi, mimari kaliplar, JS/TS/Go/Python dil kisayollari, test ve hata yonetimi, veri tabani, CI/CD, gozden gecirme ve guvenlik incelemesi.
+Backend and API design, architecture patterns, JS/TS/Go/Python language shortcuts, testing and error handling, databases, CI/CD, review and security inspection.
 
-| Skill | Durum | Lisans | Platform kanıtı |
+| Skill | Status | License | Platform evidence |
 |---|---|---|---|
 | [api-design-principles](skills/coding/api-design-principles) | published | MIT | claude, codex |
 | [architecture-patterns](skills/coding/architecture-patterns) | published | MIT | claude, codex |
@@ -102,66 +105,61 @@ Backend ve API tasarimi, mimari kaliplar, JS/TS/Go/Python dil kisayollari, test 
 | [microservices-patterns](skills/coding/microservices-patterns) | published | MIT | claude, codex |
 | [modern-javascript-patterns](skills/coding/modern-javascript-patterns) | published | MIT | claude, codex |
 | [nodejs-backend-patterns](skills/coding/nodejs-backend-patterns) | published | MIT | claude, codex |
-| [playwright-generate-test](skills/coding/playwright-generate-test) | published | MIT | claude |
+| [playwright-generate-test](skills/coding/playwright-generate-test) | published | MIT | copilot |
 | [postgresql-table-design](skills/coding/postgresql-table-design) | published | MIT | claude, codex |
 | [prompt-engineering-patterns](skills/coding/prompt-engineering-patterns) | published | MIT | claude, codex |
 | [python-error-handling](skills/coding/python-error-handling) | published | MIT | claude, codex |
 | [python-type-safety](skills/coding/python-type-safety) | published | MIT | claude, codex |
 | [rag-implementation](skills/coding/rag-implementation) | published | MIT | claude, codex |
-| [react-audit-grep-patterns](skills/coding/react-audit-grep-patterns) | published | MIT | claude |
-| [react19-concurrent-patterns](skills/coding/react19-concurrent-patterns) | published | MIT | claude |
-| [react19-test-patterns](skills/coding/react19-test-patterns) | published | MIT | claude |
+| [react-audit-grep-patterns](skills/coding/react-audit-grep-patterns) | published | MIT | copilot |
+| [react19-concurrent-patterns](skills/coding/react19-concurrent-patterns) | published | MIT | copilot |
+| [react19-test-patterns](skills/coding/react19-test-patterns) | published | MIT | copilot |
 | [saga-orchestration](skills/coding/saga-orchestration) | published | MIT | claude, codex |
-| [security-review](skills/coding/security-review) | published | MIT | claude |
+| [security-review](skills/coding/security-review) | published | MIT | copilot |
 | [skill-creator](skills/coding/skill-creator) | published | Apache-2.0 | claude |
-| [small-reviewable-change](skills/coding/small-reviewable-change) | draft | — | yok |
-| [test-gap-audit](skills/coding/test-gap-audit) | published | MIT | claude |
+| [small-reviewable-change](skills/coding/small-reviewable-change) | draft | - | none |
+| [test-gap-audit](skills/coding/test-gap-audit) | published | MIT | copilot |
 | [typescript-advanced-types](skills/coding/typescript-advanced-types) | published | MIT | claude, codex |
 | [webapp-testing](skills/coding/webapp-testing) | published | Apache-2.0 | claude |
 | [workflow-orchestration-patterns](skills/coding/workflow-orchestration-patterns) | published | MIT | claude, codex |
 
-### automation — 12 skill
+### automation — 8 skills
 
-Belge ve sunum uretimi, API semasi uretimi, changelog otomasyonu, tehdit modelleme, metrik/uyari yapilandirmasi ve savunmaci kabuk yazimi.
+Document and presentation generation, API schema generation, changelog automation, threat modeling, metric/alert configuration and defensive shell scripting.
 
-| Skill | Durum | Lisans | Platform kanıtı |
+| Skill | Status | License | Platform evidence |
 |---|---|---|---|
 | [attack-tree-construction](skills/automation/attack-tree-construction) | published | MIT | claude, codex |
 | [bash-defensive-patterns](skills/automation/bash-defensive-patterns) | published | MIT | claude, codex |
 | [changelog-automation](skills/automation/changelog-automation) | published | MIT | claude, codex |
-| [docx](skills/automation/docx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 | [github-actions-templates](skills/automation/github-actions-templates) | published | MIT | claude, codex |
 | [openapi-spec-generation](skills/automation/openapi-spec-generation) | published | MIT | claude, codex |
-| [pdf](skills/automation/pdf) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
-| [pptx](skills/automation/pptx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 | [prometheus-configuration](skills/automation/prometheus-configuration) | published | MIT | claude, codex |
 | [security-requirement-extraction](skills/automation/security-requirement-extraction) | published | MIT | claude, codex |
 | [stride-analysis-patterns](skills/automation/stride-analysis-patterns) | published | MIT | claude, codex |
-| [xlsx](skills/automation/xlsx) | draft | Anthropic-Skills-Use-Of-These-Materials | claude |
 
-### writing — 6 skill
+### writing — 5 skills
 
-Ortak dokuman yazim sureci, mimari karar kayitlari, olay runbook ve postmortem yazimi, karsi taraf iletisimi.
+Shared document writing process, architecture decision records, incident runbooks and postmortem writing, counterparty communication.
 
-| Skill | Durum | Lisans | Platform kanıtı |
+| Skill | Status | License | Platform evidence |
 |---|---|---|---|
 | [architecture-decision-records](skills/writing/architecture-decision-records) | published | MIT | claude, codex |
 | [discernment-nudge](skills/writing/discernment-nudge) | published | Apache-2.0 | claude |
-| [doc-coauthoring](skills/writing/doc-coauthoring) | draft | — | claude |
 | [incident-runbook-templates](skills/writing/incident-runbook-templates) | published | MIT | claude, codex |
 | [internal-comms](skills/writing/internal-comms) | published | Apache-2.0 | claude |
 | [postmortem-writing](skills/writing/postmortem-writing) | published | MIT | claude, codex |
 
 ### research — 1 skill
 
-Kanita dayali arastirma ve varsayim denetimi.
+Evidence-based research and assumption auditing.
 
-| Skill | Durum | Lisans | Platform kanıtı |
+| Skill | Status | License | Platform evidence |
 |---|---|---|---|
-| [evidence-based-research](skills/research/evidence-based-research) | draft | — | yok |
+| [evidence-based-research](skills/research/evidence-based-research) | draft | - | none |
 
-Kategori listesi `scripts/validate-skills.mjs` içindeki `CATEGORIES` sabitiyle sınırlıdır. Lisansı `—` olan skill'ler `draft` durumdadır ve serbest dağıtıma hazır sayılmaz.
+The category list is limited by the `CATEGORIES` constant in `scripts/validate-skills.mjs`. Skills whose license is `-` are in `draft` status and are not considered ready for free distribution.
 
-## Katkı
+## Contributing
 
-Yeni skill ekleme adımları, kanıt toplama ve gözden geçirme adımları için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasına bakın. Şablon: [skills/_template/SKILL.md](skills/_template/SKILL.md) ve `skills/_template/metadata.json`.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the steps to add a new skill, collect evidence and run the review. Templates: [skills/_template/SKILL.md](skills/_template/SKILL.md) and `skills/_template/metadata.json`.

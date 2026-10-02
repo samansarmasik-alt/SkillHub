@@ -1,7 +1,7 @@
 {
   "id": "evidence-based-research",
   "title": "evidence-based-research",
-  "summary": "Her iddianin hangi kaynak ve alintiyla desteklendigini izlenebilir bicimde ureten, cakismalari ve dogrulanamayanlari acikca bildiren arastirma akisi.",
+  "summary": "Research flow that produces each claim in a traceable form with the source and quote supporting it, and reports conflicts and unverifiable claims explicitly.",
   "category": "research",
   "origin": "ours",
   "status": "draft",
@@ -9,5 +9,5 @@
   "licenseFile": null,
   "source": null,
   "platforms": {},
-  "notes": "Ozgun icerik; lisans henuz secilmedi ve platform uyumlulugu henuz denenmedi. Kanit ve lisans belirlendiginde published yapilacak."
+  "notes": "Original content, body translated to English. No license chosen yet and platform compatibility not yet tested; it becomes published once evidence and a license exist."
 }

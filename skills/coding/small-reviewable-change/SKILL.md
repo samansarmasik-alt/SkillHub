@@ -1,112 +1,115 @@
 ---
 name: small-reviewable-change
-description: Kucuk ve incelenebilir kod degisikligi uretir; kapsam daraltma, kanit gosterme ve tek bir is mantigi icin gereksiz refactor yapmama kurallarini uygular.
+description: Produces small, reviewable code changes; enforces a minimum file set, root-cause fixes, an undeepered diff and verification output from actually run commands.
 ---
 
-# Kucuk, Incelenebilir Kod Degisikligi
+# Small, Reviewable Code Change
 
-Bu skill, tek bir is mantigini hedefleyen, kaniti gorunur ve inceleme maliyeti
-dusuk degisiklikler uretir. Amac en az satir degil, **en az baslik**.
+This skill produces changes that target a single piece of logic, show their evidence
+and stay cheap to review. The goal is not the fewest lines, but the **fewest headings**.
 
-## Tetikleyiciler
+## Triggers
 
-- Tek bir hata, ozellik veya uyumsuzluk duzeltmesi istegi ("X calismiyor",
-  "Y hatasi veriyor", "test sureyi gecmiyor").
-- Bir testin kirilmasi ve duzeltilmesi istegi.
-- Refactor istegi **oldugu halde** kapsam sinirli degilse: bu skill neyi
-  degistirmeyecegini soyler, kodun genel mimarisine dokunmaz.
+- A request to fix one bug, feature gap or incompatibility ("X does not work",
+  "Y throws an error", "the test suite fails").
+- A request to fix a broken test.
+- A refactor request whose scope is not bounded: this skill states what it will not
+  change and does not touch the overall architecture of the code.
 
-Buyuk yeniden yazim, bagimlilik yukseltme veya cok dosyali mimari degisikligi bu
-skill'in kapsami disindadir; once kapsam daralt veya ayri bir plan iste.
+Large rewrites, dependency upgrades or multi-file architecture changes are outside
+this skill's scope; narrow the scope first or ask for a separate plan.
 
-## Adimlar
+## Steps
 
-### 1. Davranisi ozetle
-Degisiklikten once hedef davranisini tek cumleyle yaz ve mevcut davranisi da
-yaz. Ikisi ayniysa istenen degisiklik bu degildir; netlestir.
+### 1. Summarize the behavior
+Before changing anything, write the target behavior in one sentence and write the
+current behavior as well. If the two are identical, this is not the change being
+asked for; clarify.
 
-### 2. Dosya ve satir sinirini sec
-Degisikligin **minimum dosya kumesini** sec. Kendi kriterin:
-- Hata mesaji veya test ciktisinin gosterdigi yeri duzelt.
-- Degisiklik icin zorunlu olan bir ek dosyaya dokun.
-- Buraya eklenen her dosya icin gerekce yaz; gerekce yoksa o dosya degistirilmez.
+### 2. Choose the file and line boundary
+Pick the **minimum set of files** for the change. Your own criteria:
+- Fix the place the error message or test output points at.
+- Touch one additional file only if the change strictly requires it.
+- For every extra file you add, write the reason; without a reason that file is not
+  changed.
 
-Gereksiz dosyaya eklenen satir, yazilmis kod degil, harcanmis inceleme
-kapasitesidir.
+Lines added to an unrelated file are not written code, they are spent review budget.
 
-### 3. Koku (root cause) bul
-Semptomu degil, nedeni duzelt. Semptom duzeltmesi ancak kenar durumlarinda
-zorunluysa yapilir ve `notlar` bolumunde gerekcesi yazilir.
+### 3. Find the root cause
+Fix the cause, not the symptom. Symptom fixes are only acceptable when a corner
+case forces them, and then the `notes` section must state the reason.
 
-Kendinden su sorulara evet diyorsan geri don:
-- "Bu degisiklik, ayni hatanin tekrarini engelliyor mu?"
-- "Bu hata, degisikligin disinda bir yerde de olabilir mi? O zaman neden burada?"
+Go back if you can answer yes to any of these:
+- "Does this change prevent the same bug from recurring?"
+- "Could this bug occur somewhere else than where I changed it? If so, why here?"
 
 ### 4. Minimum diff
-- Var olan kodu bicimlendirme, yeniden adlandirma veya siralama degisikligiyle
-  karistirma.
-- Ayni dosyada birden fazla ilgisiz duzeltme yapma.
-- Yeni bagimlilik ekleme; once mevcut araclarin yeterli olup olmadigina bak.
-- Degisiklik, istenen davranisi bozmamali; genellestirme istersen belirt, ekleme.
+- Do not mix the change with reformatting, renaming or reordering of existing code.
+- Do not make several unrelated fixes in the same file.
+- Do not add a new dependency; first check whether the existing tools are enough.
+- The change must not break the requested behavior; if you want to generalize, say
+  so instead of doing it silently.
 
-### 5. Dogrula
-Derleme, tip denetimi, lint ve ilgili testi calistir ve **komutun gercek
-ciktisini** raporla. Calistirmadigin bir kontrolun basarili oldugunu iddia etme.
-Bir kontrolu calistirmadan geciyorsan bunu acikca soyle.
+### 5. Verify
+Run the build, type check, lint and the relevant tests and report the **real output**
+of the commands. Never claim a check passed that you did not run. If you skip a
+check, say so explicitly.
 
-Calistirdigin her kontrol icin hangi adimi sifirdan dogruladigini yaz:
-"X testi calisti, hata Y testi, Z testi gecti" biciminde, dosya:satir ile.
+For every check you run, write which step it verifies from scratch, in the form
+"test X ran, test Y failed, test Z passed", with file:line.
 
-### 6. Raporla
-Asagidaki blokla rapor ver. Kodu, metni veya yorumu tekrarlama.
+### 6. Report
+Report with the block below. Do not repeat the code, the diff or the commentary.
 
 ```
-### Ne yapildi
-- <degisiklik> — dosya:satir
+### What changed
+- <change> - file:line
 
-### Neden
-- <kok neden, tek cumle>
+### Why
+- <root cause, one sentence>
 
-### Dogrulama
-- <komut> — <sonuc>
+### Verification
+- <command> - <result>
 ```
 
-## Cikti bicimi
+## Output format
 
-Yukaridaki uc baslik zorunludur. Ayrica:
-- Degisiklik **dort satiri gecmiyorsa** ozet paragraf yeterlidir; yapay
-  bicimde uzatma.
-- Ek dosya degistiyse her dosya icin gerekce yaz.
-- Calistirilmayan kontrol kaldiysa listele.
+The three headings above are mandatory. In addition:
+- If the change is **under four lines**, a short paragraph is enough; do not pad it
+  artificially.
+- If an extra file changed, give a reason for each file.
+- List any check you did not run.
 
-## Sinirlar
+## Limits
 
-- Ilgisiz kod temizligi, refactor veya dosya yeniden adlandirma **yapilmaz**.
-  Istenirse ayri ve isaretlenmis bir degisiklik olarak teklif edilir.
-- Kapsam buyutulmez: kucuk is icin fazladan dosya acmak bu skill'in ihlalidir.
-- Public API, veri tabani semasi, migration veya kimlik dogrulama akisi
-  degistiriliyorsa ek onay istenir; bu skill bu degisiklikleri tek basina
-  yurutmez.
-- Kaniti calistirilmayan bir kontrol "gecerli" sayilmaz; raporda acikca yazilir.
-- Silme, yeniden adlandirma veya buyuk refactor bu skill'in kapsaminda
-  degildir; ayrica plan ve onay gerekir.
+- Unrelated code cleanup, refactoring or file renaming is **not** performed. If
+  requested, propose it as a separate, explicitly marked change.
+- Scope is never grown: opening extra files for a small task violates this skill.
+- Changing a public API, database schema, migration or authentication flow requires
+  additional approval; this skill does not carry out those changes on its own.
+- A check whose evidence was not run does not count as "passing"; it is written
+  down as skipped.
+- Deletion, renaming and large refactors are outside this skill's scope; they need
+  a separate plan and approval.
 
-## Somut ornek
+## Concrete example
 
-**Istek**: "Dogrulama script'i BOM'lu JSON dosyalarini okuyamadi, duzelt."
+**Request**: "The validation script could not read JSON files with a BOM, fix it."
 
-**Ne yapildi**
-- JSON ve SKILL.md okumalarinda bastaki `\uFEFF` temizlendi — `scripts/validate-skills.mjs:86` ve `:209`
-- Klasor adi ile `metadata.json.id` karsilastirmasi eklenerek BOM kaynakli yanlis "frontmatter yok" tespiti giderildi
+**What changed**
+- The leading `\uFEFF` is stripped when reading JSON and `SKILL.md` -
+  `scripts/validate-skills.mjs:86` and `:209`
+- Folder name is now compared against `metadata.json.id`, which removes the
+  BOM-induced false "no frontmatter" report
 
-**Neden**
-- `JSON.parse` ve frontmatter ayristirici, dosyanin basindaki BOM karakterini
-  verinin parcasi saydi; hata gercek bir sema hatasinin kaynakli degildi.
+**Why**
+- `JSON.parse` and the frontmatter parser counted the BOM character at the start of
+  the file as part of the data; the error did not come from a real schema problem.
 
-**Dogrulama**
-- `node scripts/validate-skills.mjs` — bom'lu fixture ile 2 hata (bom'dan kaynakli
-  oldugu bilinen iki adet), BOM temizlendikten sonra yalniz gercek sema hatalari
-  kaldi; gecerli fixture ile exit 0
-- `node --check scripts/validate-skills.mjs` — exit 0
+**Verification**
+- `node scripts/validate-skills.mjs` - with a BOM fixture it reported 2 errors (both
+  known to originate from the BOM); after stripping the BOM only the real schema
+  errors remained, and with a valid fixture the exit code is 0
+- `node --check scripts/validate-skills.mjs` - exit 0
 
-**Ek dosya degisikligi**: yok. Degisiklik tek dosyada kaldi.
+**Extra file changes**: none. The change stayed in a single file.

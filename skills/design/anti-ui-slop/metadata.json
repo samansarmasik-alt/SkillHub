@@ -14,14 +14,14 @@
     "retrievedAt": "2026-10-02"
   },
   "platforms": {
-    "claude": {
-      "usage": "SKILL.md c deposundaki skill biciminde sunulur; tum yardimci dosyalar ve lisans metni aynen korunur.",
+    "copilot": {
+      "usage": "Skill dizini .github/skills/ altina kopyalanir; Copilot SKILL.md frontmatter name ve description alanlarini okuyup skill'i ilgili gorevde yukler.",
       "evidence": {
         "basis": "documentation",
-        "reference": "https://github.com/github/awesome-copilot/tree/143a3d976b3c1603cc8932984d5e1f28501cb5fc/skills/anti-ui-slop",
-        "verifiedAt": "2026-10-02"
+        "reference": "https://code.visualstudio.com/docs/copilot/customization/agent-skills",
+        "verifiedAt": "2026-10-03"
       }
     }
   },
-  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE dosyasindan ayni baytlardan LICENSE olarak kopyalandi."
+  "notes": "Kaynak SKILL.md ve tum yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynagin kendi LICENSE dosyasindan ayni baytlardan LICENSE olarak kopyalandi. Platform kaniti, kaynak deponun Claude uyumlulugu degil Copilot/SKILL.md uyum belgeleriyle (code.visualstudio.com/docs/copilot/customization/agent-skills) dogrulandi."
 }

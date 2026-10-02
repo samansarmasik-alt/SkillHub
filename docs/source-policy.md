@@ -1,44 +1,44 @@
-# Kaynak ve Kanıt Politikası
+# Source and Evidence Policy
 
-## Kaynak
+## Source
 
-Her skill'in kökeni `metadata.json` içindeki `origin` alanıyla belirlenir.
+The origin of every skill is declared by the `origin` field in `metadata.json`.
 
-- `origin: "ours"` — bu depoda yazıldı.
-- `origin: "mirrored"` — dış kaynaktan alındı.
+- `origin: "ours"` — written in this repository.
+- `origin: "mirrored"` — taken from an external source.
 
-`mirrored` skill'lerde `source` bloğu zorunludur:
+The `source` block is mandatory for `mirrored` skills:
 
 ```json
 "source": {
   "repo": "https://github.com/<owner>/<repo>",
   "path": "skills/<skill-id>",
-  "version": "<tag veya commit>",
+  "version": "<tag or commit>",
   "retrievedAt": "YYYY-MM-DD"
 }
 ```
 
-Lisans bilgisi tek kaynaktan, üst düzey `license` ve `licenseFile` alanlarında tutulur. `source` bloğu lisans taşımaz; iki yerde lisans yazılırsa kayıt tutarsız sayılır.
+License information lives in exactly one place: the top-level `license` and `licenseFile` fields. The `source` block carries no license; writing the license in two places is considered an inconsistent record.
 
 ```json
-"license": "<lisans adı veya null>",
-"licenseFile": "<klasör içindeki lisans dosyası veya null>"
+"license": "<license name or null>",
+"licenseFile": "<license file inside the folder or null>"
 ```
 
-Kurallar:
+Rules:
 
-1. Orijinal `SKILL.md` içeriği ve lisans metni değiştirilmez. Dış kaynaklı skill'in lisans metni kendi klasörüne `LICENSE` olarak kopyalanır ve `licenseFile` ile gösterilir.
-2. Lisans bulunamıyorsa `license` değeri `null` olur ve skill `published` yapılamaz.
-3. Herhangi bir içerik değişikliği yapıldıysa `notes` alanında açıkça belirtilir.
-4. Kopyalama tarihi `retrievedAt` olarak kaydedilir; `version` ile eşleşmelidir.
+1. The original `SKILL.md` content and license text are not modified. The license of an external-source skill is copied into its own folder as `LICENSE` and shown with `licenseFile`.
+2. If no license can be found, `license` becomes `null` and the skill cannot be `published`.
+3. If any content change was made, it is stated explicitly in the `notes` field.
+4. The copy date is recorded as `retrievedAt` and must match `version`.
 
-## Platform doğrulama kanıtı
+## Platform verification evidence
 
-`platforms` alanı platform anahtarlarını (`claude`, `codex`) taşır. Her giriş:
+The `platforms` field carries platform keys (`claude`, `codex`, `copilot`). Each entry:
 
 ```json
 "claude": {
-  "usage": "Kullanım metni",
+  "usage": "Usage text",
   "evidence": {
     "basis": "documentation",
     "reference": "https://...",
@@ -47,25 +47,25 @@ Kurallar:
 }
 ```
 
-- `basis` yalnızca `documentation` veya `hands-on` olabilir.
-- `reference` HTTPS olmalıdır; kaynak metinde doğrudan alıntılanabilir bir adres tercih edilir.
-- `verifiedAt` kontrol tarihidir.
-- Kanıtı olmayan platform anahtarı `metadata.json` içinde **bulunmaz**. Uyumluluk tahmin edilmez.
+- `basis` may only be `documentation` or `hands-on`.
+- `reference` must be HTTPS; an address that can be quoted directly from the source text is preferred.
+- `verifiedAt` is the date of the check.
+- A platform key without evidence is **absent** from `metadata.json`. Compatibility is never guessed.
 
-Kanıt yetersizse skill `status: "draft"` kalır ve katalog dışında tutulur.
+If the evidence is insufficient the skill stays `status: "draft"` and is kept out of the catalog.
 
-## metadata.json şeması (özet)
+## metadata.json schema (summary)
 
-| Alan | Zorunlu | Değerler |
+| Field | Required | Values |
 | --- | --- | --- |
-| `id` | evet | klasör adıyla aynı, kebab-case |
-| `title` | evet | görünen ad; `SKILL.md` frontmatter `name` ile aynı olmalı |
-| `summary` | evet | tek cümle, en fazla 240 karakter |
-| `category` | evet | `coding`, `research`, `writing`, `automation` |
-| `origin` | evet | `ours`, `mirrored` |
-| `status` | evet | `draft`, `published` |
-| `license` | hayır | lisans adı veya `null`; tahmin edilmez |
-| `licenseFile` | hayır | klasör içi lisans dosyası veya `null` |
-| `source` | `mirrored` ise | yukarıdaki blok (lisans içermez) |
-| `platforms` | `published` için | en az bir kanıtlı platform |
-| `notes` | hayır | özgün içerik değişiklikleri |
+| `id` | yes | same as the folder name, kebab-case |
+| `title` | yes | display name; must match the `SKILL.md` frontmatter `name` |
+| `summary` | yes | one sentence, at most 240 characters |
+| `category` | yes | `coding`, `research`, `writing`, `automation`, `design` |
+| `origin` | yes | `ours`, `mirrored` |
+| `status` | yes | `draft`, `published` |
+| `license` | no | license name or `null`; never guessed |
+| `licenseFile` | no | in-folder license file or `null` |
+| `source` | if `mirrored` | the block above (carries no license) |
+| `platforms` | for `published` | at least one verified platform |
+| `notes` | no | original content changes |

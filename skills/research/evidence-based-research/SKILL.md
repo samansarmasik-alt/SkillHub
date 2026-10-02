@@ -1,131 +1,132 @@
 ---
 name: evidence-based-research
-description: Bir konu hakkinda iddia uretmek yerine, hangi kaynagin hangi cumleyi destekledigini adim adim izleyen arastirma sonucu uretir.
+description: Produces research where every claim is traceable to the source and quote that support it, instead of generating assertions.
 ---
 
-# Kanita Dayali Arastirma
+# Evidence-Based Research
 
-Bu skill, soruya cevap uretirken her iddianin hangi kaynaktan geldigini
-gorunur kilan bir arastirma akisidir. Amac hizli cevap degil, **tasinabilir
-kanit** uretmektir: okuyan baska biri iddiayi ayni kaynaktan yeniden
-dogrulayabilmelidir.
+This skill is a research flow that makes the origin of every claim visible while
+answering a question. The goal is not a fast answer but **portable evidence**: someone
+else reading it must be able to re-verify the claim from the same source.
 
-## Tetikleyiciler
+## Triggers
 
-Bu skill su isteklerde kullanilir:
+Use this skill for:
 
-- "X gercekten dogru mu?", "en iyi/guncel/guvenilir Y nedir?" gibi dogrulama istegi.
-- "karsilastir", "hangisi daha iyi", "artilar ve eksiler" turunden kiyas talebi.
-- Bir kararin arkasina kanit, tarih, surum veya kaynak gerektigi durumlar.
-- Bir onceki cevabin dayandigi varsayimin denetlenmesi.
+- Verification requests such as "is X really true?" or "what is the best/most
+  current/most reliable Y?".
+- Comparison requests: "compare", "which is better", "pros and cons".
+- Any situation where a decision needs evidence, a date, a version or a source.
+- Auditing an assumption a previous answer relied on.
 
-Tetikleyici yoksa kullanma: yalnizca kisa bir bilgi sorusu icin gerekmez.
+Do not use it without a trigger: it is unnecessary for a short factual question.
 
-## Adimlar
+## Steps
 
-### 1. Soruyu olcebilir hale getir
-Soru genis veya belirsizse once sinirla. Arastirmanin bitim kriterini tek cumleyle
-yaz: "X icin, Y kosulunda, en gecerli kaynak ne diyor?" Bu cumle sonunda
-raporun "Kapsam" bolumune aynen girer.
+### 1. Make the question measurable
+If the question is broad or vague, narrow it first. Write the exit criterion of the
+research in one sentence: "For X, under condition Y, what does the most valid source
+say?" This sentence goes verbatim into the "Scope" section of the report.
 
-### 2. Kaynak hiyerarsisi kur
-Kaynaklari su sirayla tercih et ve hangi cografyayi taradigini yaz:
+### 2. Build a source hierarchy
+Prefer sources in this order and state which geography you searched:
 
-1. Birincil kaynak: resmi dokuman, kaynak kodu, yasa metni, veri tabani kaydi.
-2. Birincil kaynagi yorumlayan guvenilir ikincil kaynak.
-3. Topluluk kaynaklari (issue, tartisma, blog) yalnizca birincil kaynak bulunamazsa.
+1. Primary sources: official documentation, source code, legal text, database
+   records.
+2. Reliable secondary sources interpreting a primary source.
+3. Community sources (issues, discussions, blogs) only when no primary source exists.
 
-Guncellik belirsizse kaynagin yayin/versiyon tarihini kontrol et; tarihi olmayan
-kaynagi kanit degil, ipucu say.
+If recency is unclear, check the publication/version date of the source; an undated
+source is a hint, not evidence.
 
-### 3. Ayni iddiayi iki kaynaktan dogrula
-Tek kaynak yeterli degildir. Kritik her iddia icin:
-- bir kaynagi oku ve ilgili cumleyi **alintila**,
-- bagimsiz bir ikinci kaynaktan ayni iddiayi ara,
-- ikisi cakistigini belirt ve hangisinin gecerli oldugunu gerekceyle sec.
+### 3. Verify each claim with two sources
+A single source is not enough. For every critical claim:
+- read one source and **quote** the relevant sentence,
+- search for the same claim in an independent second source,
+- if they conflict, say so and pick the valid one with a reason.
 
-Cakisma bulunmazsa bunu da yaz ("tek kaynakla sinirli kaldi"). Bu, eksikligi
-gizlemekten iyidir.
+If there is no conflict, say that too ("remained limited to a single source"). This is
+better than hiding the gap.
 
-### 4. Kaniti kaydet
-Her bulgu icin su alanlari doldur. Eksik alan bir bulguyu tabii degil yapar:
+### 4. Record the evidence
+Fill in the following fields for every finding. A finding with a missing field is
+weak by definition:
 
-- **Iddia** — tek cumle, dogrulanabilir bicimde.
-- **Kaynak** — baslik + adres (`url` veya dosya:satir).
-- **Alinti** — iddiayi tasiyan kisa gercek metin.
-- **Tur** — `documentation` (kaynak metin) veya `hands-on` (kendi calistirmam).
-- **Tarih** — kaynagin tarihi `YYYY-MM-DD`.
-- **Guven** — `yuksek` / `orta` / `dusuk`, nedeniyle birlikte.
+- **Claim** - one sentence, in verifiable form.
+- **Source** - title + address (`url` or file:line).
+- **Quote** - the short verbatim text carrying the claim.
+- **Type** - `documentation` (source text) or `hands-on` (run by you).
+- **Date** - the source's date as `YYYY-MM-DD`.
+- **Confidence** - `high` / `medium` / `low`, with the reason.
 
-`hands-on` kanit kullanildiysa, calistirilan komutun **gercek ciktisi** yazilir;
-cikti uydurulamaz ve kisaltilamaz.
+When `hands-on` evidence is used, write the **real output** of the command that was
+run; output cannot be invented or shortened.
 
-### 5. Konusmayanlari ayir
-Arastirma sirasinda denenen ve ise yaramayan yollari ayri bir bolumde listele.
-Bu, ayni hatayi tekrar etmeyi engeller ve hangi bosluklarin kapali
-olmadigini gosterir.
+### 5. Separate the dead ends
+List the approaches you tried during the research that did not work in a separate
+section. This prevents the same mistake from being repeated and shows which gaps are
+still open.
 
-## Cikti bicimi
+## Output format
 
-Markdown, sirali bolumlerle:
+Markdown with the sections in this order:
 
 ```
-## Kapsam
-<olculebilir soru ve sinirlar>
+## Scope
+<the measurable question and its limits>
 
-## Bulgular
-### <bulgu basligi>
-- Iddia: ...
-- Kaynak: <baslik> — <adres>
-- Alinti: "..."
-- Tur: documentation | hands-on
-- Tarih: YYYY-MM-DD
-- Guven: yuksek | orta | dusuk — <gerekce>
+## Findings
+### <finding title>
+- Claim: ...
+- Source: <title> - <address>
+- Quote: "..."
+- Type: documentation | hands-on
+- Date: YYYY-MM-DD
+- Confidence: high | medium | low - <reason>
 
-## Cakismalar ve belirsizlikler
+## Conflicts and uncertainties
 - ...
 
-## Dogrulanamayanlar
-- <iddia veya konu ve neden kanitlanamadi>
+## Not verifiable
+- <the claim or topic and why it could not be verified>
 
-## Kaynaklar
-- <adres> — <baslik> — <YYYY-MM-DD>
+## Sources
+- <address> - <title> - <YYYY-MM-DD>
 ```
 
-## Sinirlar
+## Limits
 
-- Kaynak bulunamadiginda **uydurma kaynak, tarih veya alinti yazma**. Kaynak
-  yoksa "bulunamadi" yaz ve bulguyu `Dogrulanamayanlar` bolumune tasi.
-- Alinti, kaynaktan birebir olmali; ozetleme alinti gibi sunulamaz. Paragraf
-  sonu kisaltmasi `...` ile isaretlenir.
-- Uydurulmus alintiyi tespit etmek mumkun degildir; bu yuzden her alintiyi
-  alirken kaynagi acikca yaz. Kaynaga erisemiyorsan alinti yazma.
-- Platform uyumlulugu, performans olcumu veya lisans durumu **tahmin edilmez**;
-  kanit yoksa kayit `draft` kalir.
-- Tek kaynakla dogrulanan bir iddia, cok kaynakla dogrulananla ayni guvende
-  degildir; bunu belirt.
+- When a source cannot be found, **do not invent a source, date or quote**. Write
+  "not found" and move the finding to the "Not verifiable" section.
+- A quote must be verbatim; a paraphrase must not be presented as a quote. A
+  paragraph shortened at the end is marked with `...`.
+- An invented quote cannot be detected afterwards; this is why every quote names its
+  source. If you cannot reach the source, do not write a quote.
+- Platform compatibility, performance measurements and license status are **never
+  guessed**; without evidence the record stays `draft`.
+- A claim verified by a single source is not as trustworthy as one verified by several
+  sources; say so.
 
-## Somut ornek
+## Concrete example
 
-**Soru**: "Bu repo icindeki dogrulama script'i CI'da calisiyor mu?"
+**Question**: "Does the validation script in this repository run in CI?"
 
-**Kapsam**: SkillHub deposunda `.github/workflows/validate.yml` ve
-`scripts/validate-skills.mjs` dosyalarinin push ve pull_request olaylarinda
-cagrilip cagrilmadigi.
+**Scope**: Whether `.github/workflows/validate.yml` and `scripts/validate-skills.mjs`
+are invoked on the push and pull_request events in the SkillHub repository.
 
-**Bulgular**
-### Dogrulama adimi CI'da tanimli
-- Iddia: Her push ve pull_request'te `node scripts/validate-skills.mjs` calistirilir.
-- Kaynak: .github/workflows/validate.yml
-- Alinti: "run: node scripts/validate-skills.mjs"
-- Tur: documentation
-- Tarih: <dosya son okuma tarihi>
-- Guven: yuksek — tanim dogrudan dosyada; ayrica yerelde calistirildi ve exit 0 verdi.
+**Findings**
+### The validation step is defined in CI
+- Claim: `node scripts/validate-skills.mjs` runs on every push and pull_request.
+- Source: .github/workflows/validate.yml
+- Quote: "run: node scripts/validate-skills.mjs"
+- Type: documentation
+- Date: <date the file was last read>
+- Confidence: high - defined directly in the file; it also ran locally and exited 0.
 
-**Dogrulanamayanlar**
-- GitHub Actions'in o an gercekten yesil oldugu: yerel calistirma yalnizca script'in
-  dogru oldugunu gosterir, uzaktaki kosullari gostermez. Dashboard ekran goruntusuyle
-  dogrulanmali.
+**Not verifiable**
+- Whether GitHub Actions is actually green right now: a local run only shows that the
+  script is correct, not the remote conditions. It must be verified from the
+  dashboard.
 
-**Kaynaklar**
-- https://github.com/<owner>/<repo>/blob/main/.github/workflows/validate.yml — validate.yml — <YYYY-MM-DD>
+**Sources**
+- https://github.com/<owner>/<repo>/blob/main/.github/workflows/validate.yml - validate.yml - <YYYY-MM-DD>
