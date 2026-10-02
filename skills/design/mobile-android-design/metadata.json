@@ -1,0 +1,35 @@
+{
+  "id": "mobile-android-design",
+  "title": "mobile-android-design",
+  "summary": "Material Design 3 temalandirmasi ve Jetpack Compose ile dogal Android arayuzu tasarlama.",
+  "category": "design",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/wshobson/agents",
+    "path": "plugins/ui-design/skills/mobile-android-design",
+    "version": "156b7a5e7a8b93642628a339ee4039c925b34c7f",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md, .claude-plugin/plugin.json tarafindan derlenen Claude Code plugin icinde skills/ altindan sunulur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/blob/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/ui-design/.claude-plugin/plugin.json",
+        "verifiedAt": "2026-10-02"
+      }
+    },
+    "codex": {
+      "usage": "SKILL.md, .codex-plugin/plugin.json icindeki \"skills\": \"./skills/\" bildirimiyle Codex plugininde sunulur; manifest lisans ve interface.category tasir.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/wshobson/agents/blob/156b7a5e7a8b93642628a339ee4039c925b34c7f/plugins/ui-design/.codex-plugin/plugin.json",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve references/ yardimcisi birebir kopyalandi (sha256 dogrulandi). MIT lisansi depo kokundeki tek LICENSE dosyasindan ayni baytlarla kopyalandi."
+}

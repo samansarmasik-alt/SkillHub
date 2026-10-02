@@ -45,6 +45,52 @@ Yayın için tek bir platformun geçerli kanıtla doğrulanması yeterlidir; di�
 
 Kanıt biçimi, alan adları ve kalite ölçütleri için [docs/source-policy.md](docs/source-policy.md) ve [docs/quality-rubric.md](docs/quality-rubric.md) dosyalarına bakın.
 
+## Katalog
+
+Toplam **23 skill**, 3 kategoride. Aşağıdaki sayılar `metadata.json` dosyalarından üretilir, elle yazılmaz.
+
+### design — 18 skill
+
+Tasarım sistemleri, tipografi, renk ve spacing, etkileşim/motion, duyarlı yerleşim, WCAG 2.2 erişilebilirlik ve mobil (iOS/Android/React Native) arayüz tasarımı.
+
+| Skill | Durum | Lisans | Platform kanıtı |
+|---|---|---|---|
+| [accessibility-compliance](skills/design/accessibility-compliance) | published | MIT | claude, codex |
+| [algorithmic-art](skills/design/algorithmic-art) | published | Apache-2.0 | claude |
+| [brand-guidelines](skills/design/brand-guidelines) | published | Apache-2.0 | claude |
+| [canvas-design](skills/design/canvas-design) | published | Apache-2.0 | claude |
+| [frontend-design](skills/design/frontend-design) | published | Apache-2.0 | claude |
+| [interaction-design](skills/design/interaction-design) | published | MIT | claude, codex |
+| [mobile-android-design](skills/design/mobile-android-design) | published | MIT | claude, codex |
+| [mobile-ios-design](skills/design/mobile-ios-design) | published | MIT | claude, codex |
+| [react-native-design](skills/design/react-native-design) | published | MIT | claude, codex |
+| [responsive-design](skills/design/responsive-design) | published | MIT | claude, codex |
+| [screen-reader-testing](skills/design/screen-reader-testing) | published | MIT | claude, codex |
+| [slack-gif-creator](skills/design/slack-gif-creator) | published | Apache-2.0 | claude |
+| [theme-factory](skills/design/theme-factory) | published | Apache-2.0 | claude |
+| [visual-design-foundations](skills/design/visual-design-foundations) | published | MIT | claude, codex |
+| [design-system-patterns](skills/design/design-system-patterns) | published | MIT | claude, codex |
+| [web-artifacts-builder](skills/design/web-artifacts-builder) | published | Apache-2.0 | claude |
+| [web-component-design](skills/design/web-component-design) | published | MIT | claude, codex |
+| [wcag-audit-patterns](skills/design/wcag-audit-patterns) | published | MIT | claude, codex |
+
+### coding — 4 skill
+
+| Skill | Durum | Lisans | Platform kanıtı |
+|---|---|---|---|
+| [mcp-builder](skills/coding/mcp-builder) | published | Apache-2.0 | claude |
+| [skill-creator](skills/coding/skill-creator) | published | Apache-2.0 | claude |
+| [small-reviewable-change](skills/coding/small-reviewable-change) | draft | — | yok |
+| [webapp-testing](skills/coding/webapp-testing) | published | Apache-2.0 | claude |
+
+### research — 1 skill
+
+| Skill | Durum | Lisans | Platform kanıtı |
+|---|---|---|---|
+| [evidence-based-research](skills/research/evidence-based-research) | draft | — | yok |
+
+Kategori listesi `scripts/validate-skills.mjs` içindeki `CATEGORIES` sabitiyle sınırlıdır.
+
 ## Katkı
 
 Yeni skill ekleme adımları, kanıt toplama ve gözden geçirme adımları için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasına bakın. Şablon: [skills/_template/SKILL.md](skills/_template/SKILL.md) ve `skills/_template/metadata.json`.

@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SKILLS_DIR = path.join(ROOT, "skills");
 const EXCLUDED_DIRS = new Set(["_template"]);
-const CATEGORIES = new Set(["coding", "research", "writing", "automation"]);
+const CATEGORIES = new Set(["coding", "design", "research", "writing", "automation"]);
 const STATUSES = new Set(["draft", "published"]);
 const ORIGINS = new Set(["ours", "mirrored"]);
 const BASIS = new Set(["documentation", "hands-on"]);

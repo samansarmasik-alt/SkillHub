@@ -1,0 +1,27 @@
+{
+  "id": "brand-guidelines",
+  "title": "brand-guidelines",
+  "summary": "Anthropic resmi marka renklerini ve tipografisini her turlu belge ve ciktiya uygulama kilavuzu.",
+  "category": "design",
+  "origin": "mirrored",
+  "status": "published",
+  "license": "Apache-2.0",
+  "licenseFile": "LICENSE",
+  "source": {
+    "repo": "https://github.com/anthropics/skills",
+    "path": "skills/brand-guidelines",
+    "version": "8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4",
+    "retrievedAt": "2026-10-02"
+  },
+  "platforms": {
+    "claude": {
+      "usage": "SKILL.md, Claude Code skill biciminde sunulur; klasordeki LICENSE.txt ve yardimci dosyalar aynen korunur.",
+      "evidence": {
+        "basis": "documentation",
+        "reference": "https://github.com/anthropics/skills/tree/8a1541c4a3ffa5a20a5a91de0dcf3f0bab1d1ef4/skills/brand-guidelines",
+        "verifiedAt": "2026-10-02"
+      }
+    }
+  },
+  "notes": "Kaynak SKILL.md ve yardimci dosyalar birebir kopyalandi (sha256 dogrulandi). Apache-2.0 metni kaynaktaki LICENSE.txt ile ayni baytlardan LICENSE olarak kopyalandi."
+}
