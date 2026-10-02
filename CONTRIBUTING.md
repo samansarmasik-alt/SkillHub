@@ -6,7 +6,7 @@
 2. Klasör oluşturun: `skills/<kategori>/<skill-id>/`. `<skill-id>` küçük harf ve kısa çizgi ile ayrılmış olmalı ve `metadata.json` içindeki `id` ile birebir aynı olmalıdır. `SKILL.md` frontmatter `name` ise görünen addır ve `metadata.json` içindeki `title` ile aynı olmalıdır.
 3. `skills/_template/SKILL.md` ve `skills/_template/metadata.json` dosyalarını kopyalayıp kendi klasörünüze taşıyın.
 4. Gövdeyi yazın: ne yaptığı, ne zaman kullanılacağı, girdi/çıktı, sınırlar.
-5. `metadata.json` içindeki platform kanıtlarını doldurun. Kanıtsız platform alanını silin, tahmin etmeyin.
+5. `metadata.json` içindeki platform kanıtlarını doldurun. `status` değeri `draft` olsa bile yazdığınız her platform için `evidence` (`basis`, HTTPS `reference`, `verifiedAt`) zorunludur; kanıtsız platformu hiç eklemeyin, alanı boş bırakın veya tümüyle silin. Tahmin etmeyin. Yayın için tek bir kanıtlı platform yeterlidir.
 6. Kalite ölçütlerini [docs/quality-rubric.md](docs/quality-rubric.md) üzerinden kendiniz denetleyin.
 7. `status` alanını en son `published` yapın; ancak tüm yayın koşulları sağlanıyorsa.
 8. `node scripts/validate-skills.mjs` komutunu çalıştırıp hata olmadığını doğrulayın.
@@ -32,7 +32,8 @@ klasör adı `id` ile eşleşmesi ve kebab-case biçimi, kategori değerinin izi
 (ve varsa üst klasör adıyla uyumu), `SKILL.md` frontmatter `name` ile `title` eşleşmesi,
 `source` bloğunun `mirrored` kayıtlar için eksiksiz ve HTTPS olması, lisansın yalnızca üst
 düzey alanlarda bulunması ve `licenseFile` dosyasının var olması, `published` kayıtlar için
-lisans ve en az bir geçerli platform kanıtı (`basis`, HTTPS `reference`, `verifiedAt`).
+lisans ve en az bir geçerli platform kanıtı (`basis`, HTTPS `reference`, `verifiedAt`), `draft`
+kayıtlarda da `platforms` altına yazılan her platformun kanıt alanlarının eksiksiz olması.
 
 `draft` kayıtlarda eksik yayın alanları hata üretmez. Katalog boşken betik başarıyla biter.
 Aynı komut GitHub Actions içinde `push` ve `pull_request` üzerinde çalışır
@@ -46,6 +47,6 @@ Aynı komut GitHub Actions içinde `push` ve `pull_request` üzerinde çalışı
 - [ ] Lisans bilgisi yalnızca üst düzey `license` / `licenseFile` alanlarında.
 - [ ] Gövde, kullanım senaryosunu somut örnek veriyor.
 - [ ] En az bir platform için `evidence.reference` (HTTPS) ve `evidence.verifiedAt` (YYYY-MM-DD) var.
-- [ ] Kanıtsız platform alanı kaldırılmış.
+- [ ] Kanıtsız platform alanı kaldırılmış (`draft` kayıtta da; yazılan her platform kanıtlı olmalı).
 - [ ] Dış kaynaklı ise lisans ve kaynak bilgisi eksiksiz.
 - [ ] Kök `LICENSE` dosyası eklenmeden lisans alanına isim yazılmamış.

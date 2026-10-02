@@ -39,7 +39,9 @@ Bir skill yalnızca aşağıdaki koşulların tamamı sağlandığında `metadat
 3. En az bir platform için tarihli doğrulama kanıtı vardır (`platforms.<platform>.evidence`).
 4. Dış kaynaklı ise `source` bloğu ve üst düzey lisans alanları eksiksizdir.
 
-Doğrulanmamış platform uyumluluğu listelenmez. Kanıt bulunmayan hiçbir platform uyumu varsayılmaz ve örnek skill eklenmez.
+`status` değeri `draft` olsa bile `platforms` altına yazılan her platform kanıt taşımak zorundadır; kanıtsız bir platform alanı yazılırsa doğrulayıcı hata üretir. Doğrulanmamış platform uyumluluğu hiçbir şekilde listelenmez: alan boş bırakılır veya tümüyle yazılmaz. Kanıt bulunmayan hiçbir platform uyumu varsayılmaz ve örnek skill eklenmez.
+
+Yayın için tek bir platformun geçerli kanıtla doğrulanması yeterlidir; diğer platformların kanıtı yoksa skill yine `published` olabilir.
 
 Kanıt biçimi, alan adları ve kalite ölçütleri için [docs/source-policy.md](docs/source-policy.md) ve [docs/quality-rubric.md](docs/quality-rubric.md) dosyalarına bakın.
 
